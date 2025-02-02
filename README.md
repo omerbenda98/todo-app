@@ -28,12 +28,3 @@ A simple todo application built with Flask that helps track tasks and test syste
 
    http://localhost:5000
 
-## Project Structure
-
-todo-app/
-├── app.py              # Main Flask application
-├── static/
-│   └── style.css      # CSS styles
-└── templates/
-    └── todos.html     # HTML template
-
