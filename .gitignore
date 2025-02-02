@@ -1,0 +1,51 @@
+# 1. ignore logs
+# *.log
+
+# 2. ignore temp
+# temp/
+
+# 3. ignore all except one
+#*
+#!README.md
+
+# 4. Ignoring Files with Specific Patterns
+#*.bak
+#debug.log
+#log/
+#!logs/important.log
+
+# 5. Ignoring Nested Files
+#*.tmp
+#build/
+#!build/release/
+
+# 6. Prioritizing Rules
+#*.csv
+#!data.csv
+
+# 7. Ignoring Temporary IDE Files
+#.vscode/
+#.idea/
+#.DS_Store
+
+# 8. Ignoring Everything Except Specific File Types
+#*
+#!*.py
+#!*.md
+#!config.yaml
+
+# 10. Debugging a `.gitignore` File
+#node_modules/
+#.env
+#!.env.example
+#*.log
+#!server.log
+
+# bonus. Editing an Existing `.gitignore` File
+#/build/
+#*debug.log
+#!*.log
+#!/build/release/
+
+my-app-env/
+__pycache__/

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DevOps Todo List</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="todo-container">
+      <div class="welcome-section">
+        <h1>Welcome to my DevOps ToDo App</h1>
+        <p>This app helps you verify system health and connectivity:</p>
+        <div class="status-info">
+          <div class="status-item">
+            <span class="status-label">App Status:</span>
+            <span class="status-badge success">Running ✓</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Database Connection:</span>
+            <span class="status-badge success">Connected ✓</span>
+          </div>
+        </div>
+      </div>
+
+      <form action="{{ url_for('add_todo') }}" method="POST" class="add-form">
+        <input
+          type="text"
+          name="todo_text"
+          placeholder="Add new task..."
+          required
+        />
+        <button type="submit">Add</button>
+      </form>
+
+      <div class="todo-list">
+        {% for todo_text, is_todo in todos.items() %}
+        <div class="todo-item">
+          <input
+            type="checkbox"
+            id="todo-{{ loop.index }}"
+            {%
+            if
+            not
+            is_todo
+            %}checked{%
+            endif
+            %}
+            onclick="location.href='/toggle_todo/{{ todo_text }}'"
+          />
+          <label for="todo-{{ loop.index }}">{{ todo_text }}</label>
+          <form action="{{ url_for('delete_todo') }}" method="POST">
+            <input type="hidden" name="todo_text" value="{{ todo_text }}" />
+            <button type="submit" class="delete-btn">×</button>
+          </form>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>
