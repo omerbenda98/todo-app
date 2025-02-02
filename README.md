@@ -6,11 +6,6 @@ A simple todo application built with Flask that helps track tasks and test syste
 - Add, delete, and toggle tasks
 - Monitor app status
 - Check database connectivity
-- Dark theme UI
-
-## Prerequisites
-- Python 3.x
-- Flask
 
 ## Installation
 
@@ -21,7 +16,7 @@ A simple todo application built with Flask that helps track tasks and test syste
 
 2. Install Dependencies:
 
-   pip install requirement.txt
+   pip install requirements.txt
 
 ## Running the app
 
