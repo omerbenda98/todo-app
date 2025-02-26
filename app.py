@@ -4,10 +4,10 @@ import os
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://{}:{}@{}/{}'.format(
-    os.getenv('MYSQL_USER', 'todo_user'),
-    os.getenv('MYSQL_PASSWORD', 'todo_pass'),
-    os.getenv('MYSQL_HOST', 'db'),
-    os.getenv('MYSQL_DATABASE', 'todo_db')
+    os.getenv('MYSQL_USER', 'myuser'),
+    os.getenv('MYSQL_PASSWORD', 'pass'),
+    os.getenv('MYSQL_HOST', '172.31.26.188'),
+    os.getenv('MYSQL_DATABASE', 'todo')
 )
 db = SQLAlchemy(app)
 
@@ -58,4 +58,4 @@ def delete_todo():
     return redirect(url_for('todo_list'))
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000)
+    app.run(host='0.0.0.0', port=5000)
